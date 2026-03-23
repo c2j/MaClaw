@@ -221,16 +221,16 @@ jobs:
             cp "dist/${APP_NAME}-${VERSION}-darwin-${ARCH}" "$BUNDLE/Contents/MacOS/${APP_NAME}"
             chmod +x "$BUNDLE/Contents/MacOS/${APP_NAME}"
             [ -f build/AppIcon.icns ] && cp build/AppIcon.icns "$BUNDLE/Contents/Resources/"
-            cat > "$BUNDLE/Contents/Info.plist" <<PEOF
+            cat > "$BUNDLE/Contents/Info.plist" <<'PEOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleName</key><string>${APP_NAME}</string>
-  <key>CFBundleExecutable</key><string>${APP_NAME}</string>
-  <key>CFBundleIdentifier</key><string>${IDENTIFIER}</string>
-  <key>CFBundleVersion</key><string>${VERSION}</string>
-  <key>CFBundleShortVersionString</key><string>${VERSION}</string>
+  <key>CFBundleName</key><string>'${APP_NAME}'</string>
+  <key>CFBundleExecutable</key><string>'${APP_NAME}'</string>
+  <key>CFBundleIdentifier</key><string>'${IDENTIFIER}'</string>
+  <key>CFBundleVersion</key><string>'${VERSION}'</string>
+  <key>CFBundleShortVersionString</key><string>'${VERSION}'</string>
   <key>CFBundleIconFile</key><string>AppIcon</string>
   <key>LSMinimumSystemVersion</key><string>10.15.0</string>
   <key>NSHighResolutionCapable</key><string>true</string>
